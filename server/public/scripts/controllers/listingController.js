@@ -16,7 +16,7 @@ myApp.controller('listingController', ['$http', function ($http) {
         console.log(newL);
         $http.post('/listings', newL).then(function (response) {
             console.log('success');
-
+            vm.refreshListings();
         }).catch(function (error) {
             console.log('failure');
         })
