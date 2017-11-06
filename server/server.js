@@ -19,7 +19,7 @@ app.use('/listings', listingRoute);
 var mongoose = require('mongoose');
 
 // 27017 is the default mongo port number
-var mongoURI = 'mongodb://jaffa:mountainlion$$@ds249565.mlab.com:49565/jaffa';
+var mongoURI = '';
 // process.env.MONGODB_URI will only be defined if you
     // are running on Heroku
     if(process.env.MONGODB_URI != undefined) {
@@ -41,7 +41,7 @@ mongoose.connection.on('connected', function () {
 mongoose.connection.on('error', function () {
     console.log('mongoose connection failed');
 });
-mongoose.connect(databaseUrl);
+mongoose.connect(mongoURI);
 // Eventually, the mongoose code should be in a module
 
 /** ---------- START SERVER ---------- **/
