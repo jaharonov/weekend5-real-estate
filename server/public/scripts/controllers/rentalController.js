@@ -5,17 +5,11 @@ myApp.controller('rentalController', ['$http', function ($http) {
     vm.rental = [];
     
 
-    vm.newRental = function (rent, sqft, city) {
-        var newR = {
-            rent: vm.rent,
-            sqft: vm.sqft,
-            city: vm.city
-        }
+    vm.newRental = function (newR) {
 
         console.log('new rental added');
-        rental.push(newR);
-        console.log(rental);
-        $http.post('/rentals', rental).then(function (response) {
+        console.log(newR);
+        $http.post('/rentals', newR).then(function (response) {
             console.log('success');
             vm.refreshRentals();
         }).catch(function (error) {
@@ -36,10 +30,11 @@ myApp.controller('rentalController', ['$http', function ($http) {
         $http.get('/rentals').then(function (response) {
             console.log('Success!');
             vm.rental = response.data;
+            console.log(response.data);
         }).catch(function (error) {
             console.log('Failure!', error);
         })
     }
-    //vm.refreshRentals();
+    vm.refreshRentals();
 
 }]);

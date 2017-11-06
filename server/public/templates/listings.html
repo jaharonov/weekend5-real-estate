@@ -1,13 +1,13 @@
 <h2>For Sale</h2>
 <div class="row">
     <div class="col-md-12">
-        <form ng-submit="lc.newListing(lc.newL)">
+        <form ng-submit="listing.newListing(listing.newL)">
             <label for="cost">Cost: </label>
-            <input type="number" ng-model="lc.newListing.cost" id="listingCost" placeholder="Cost" />
+            <input type="number" ng-model="listing.newL.cost" id="listingCost" placeholder="Cost" />
             <label for="sqft">Square Feet: </label>
-            <input type="number" ng-model="lc.newListing.sqft" id="listingSqFt" placeholder="Square Feet" />
+            <input type="number" ng-model="listing.newL.sqft" id="listingSqFt" placeholder="Square Feet" />
             <label for="city">City: </label>
-            <input type="text" ng-model="lc.newListing.city" id="listingSqFt" placeholder="City" />
+            <input type="text" ng-model="listing.newL.city" id="listingSqFt" placeholder="City" />
             <button class="btn btn-primary">Add Listing</button>
         </form>
     </div>
@@ -15,7 +15,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div ng-repeat="listing in lc.listings" class="well col-md-3">
+        <div ng-repeat="listing in listing.listing" class="well col-md-3">
             <p>
                 <strong>Cost:</strong> {{listing.cost}}</p>
             <p>

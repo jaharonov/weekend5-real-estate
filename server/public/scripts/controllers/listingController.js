@@ -5,17 +5,16 @@ myApp.controller('listingController', ['$http', function ($http) {
     vm.listing = [];
     
 
-    vm.newListing = function (cost, sqft, city) {
-        var newL = {
-            cost: vm.cost,
-            sqft: vm.sqft,
-            city: vm.city
-        }
+    vm.newListing = function (newL) {
+        // var newL = {
+        //     cost: vm.cost,
+        //     sqft: vm.sqft,
+        //     city: vm.city
+        // }
 
         console.log('new listing added');
-        listing.push(newL);
-        console.log(listing);
-        $http.post('/listings', listing).then(function (response) {
+        console.log(newL);
+        $http.post('/listings', newL).then(function (response) {
             console.log('success');
 
         }).catch(function (error) {

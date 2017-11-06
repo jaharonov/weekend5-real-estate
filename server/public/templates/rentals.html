@@ -2,13 +2,13 @@
 <div class="row">
     <div class="col-md-12">
         
-        <form ng-submit="rc.newRental(rent, sqft, city)"> 
+        <form ng-submit="rental.newRental(rental.newR)"> 
             <label for="rent">Rent: </label>
-            <input type="number" ng-model="rc.newRental.cost" id="rentalCost" placeholder="Rent" />
+            <input type="number" ng-model="rental.newR.rent" id="rentalRent" placeholder="Rent" />
             <label for="sqft">Square Feet: </label>
-            <input type="number" ng-model="rc.newRental.sqft" id="rentalSqFt" placeholder="Square Feet" />
+            <input type="number" ng-model="rental.newR.sqft" id="rentalSqFt" placeholder="Square Feet" />
             <label for="city">City: </label>
-            <input type="text" ng-model="rc.newRental.city" id="rentalSqFt" placeholder="City" />
+            <input type="text" ng-model="rental.newR.city" id="rentalSqFt" placeholder="City" />
             <button class="btn btn-primary">Add Rental</button>
         </form> 
     </div>
@@ -16,7 +16,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div ng-repeat="rental in rc.rentals" class="well col-md-3">
+        <div ng-repeat="rental in rental.rental" class="well col-md-3">
             <p>
                 <strong>Rent:</strong> {{rental.rent}}</p>
             <p>
