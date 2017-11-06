@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 5000;
-var route = require('./rentalRoute.js');
-var route = require('./listingRoute.js')
+var rentalRoute = require('./rentalRoute.js');
+var listingRoute = require('./listingRoute.js')
 //var add = require('./public/scripts/addController.js');
 //var view = require('./public/scripts/viewController.js');
 /** ---------- MIDDLEWARE ---------- **/
@@ -11,8 +11,8 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('server/public'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-app.use('/rentals', route);
-app.use('/listings', route);
+app.use('/rentals', rentalRoute);
+app.use('/listings', listingRoute);
 
 
 /** ---------- MONGOOSE ------------ **/
