@@ -30,7 +30,7 @@ var mongoURI = 'mongodb://jaffa:mountainlion$$@ds249565.mlab.com:49565/jaffa';
            mongoURI = 'mongodb://localhost:27017/realestate';
     }
 
-    mongoose.connect(databaseUrl, {
+    mongoose.connect(mongoURI, {
    useMongoClient: true
         });
 
