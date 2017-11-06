@@ -11,7 +11,8 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('server/public'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-app.use('/realestate', route);
+app.use('/rentals', route);
+app.use('/listings', route);
 
 
 /** ---------- MONGOOSE ------------ **/

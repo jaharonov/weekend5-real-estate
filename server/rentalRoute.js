@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var rentalSchema = new Schema({cost: Number, sqft: Number, city: String });
+var rentalSchema = new Schema({rent: Number, sqft: Number, city: String });
 var Rental = mongoose.model('Rental', rentalSchema, 'rentals');
 
 router.post('/', function (req, res) {
